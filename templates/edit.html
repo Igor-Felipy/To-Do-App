@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>{{ data[1] }}</h1>
+    <form action="/edit/{{data[0]}}" method="post">
+        <input type="text" placeholder="Assignment" name="data" id="data">
+        <button type="submit">Edit Now</button>
+    </form>
+</body>
+</html>

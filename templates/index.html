@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments To-Do</title>
+</head>
+<body>
+    <h1>Assignments To-Do</h1>
+
+    {% for ass in data %}
+        <div class="assignments">
+            <p>{{ ass[1] }}</p>
+            <button><a href="/edit/{{ass[0]}}">edit</a></button>
+            <button><a href="/delete/{{ass[0]}}">delete</a></button>
+        </div>
+    {% endfor %}
+
+    <a href="/add">adicionar tarefas</a>
+</body>
+</html>

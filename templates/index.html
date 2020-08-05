@@ -1,21 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
     <title>Assignments To-Do</title>
-</head>
-<body>
-    <h1>Assignments To-Do</h1>
+  </head>
+  <body>
 
-    {% for ass in data %}
-        <div class="assignments">
-            <p>{{ ass[1] }}</p>
-            <button><a href="/edit/{{ass[0]}}">edit</a></button>
-            <button><a href="/delete/{{ass[0]}}">delete</a></button>
-        </div>
-    {% endfor %}
 
-    <a href="/add">adicionar tarefas</a>
-</body>
+
+
+
+    <div class="container">
+      <h1 class="display-1">Assignments To-Do</h1>
+      <br>
+      {% for ass in data %}
+          <div class="assignments">
+
+              <table class="table">
+                <tr>
+                  
+                  <th scope="row"> {{ass[0]}} </th>
+                  <td> <p> {{ ass[1] }} </p> </td>
+                  <td> <a href="/edit/{{ass[0]}}"  type="button" class="btn btn-light" role="button"> edit </a> </td>
+                  <td> <a href="/delete/{{ass[0]}}" type="button" class="btn btn-dark" role="button"> delete </a> </td>
+                
+                </tr>
+              </table>
+            </div>
+      {% endfor %}
+            <br><br>
+      <a href="/add" type="button" class="btn btn-info" role="button">adicionar tarefas</a>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+  </body>
 </html>
